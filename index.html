@@ -8,6 +8,7 @@
 
   <h2>Tervetuloa! Kirjaudu sisään</h2>
 
+  <!-- LOMAKE -->
   <form onsubmit="return tarkistaKirjautuminen();">
     <label for="kayttaja">Käyttäjätunnus:</label><br>
     <input type="text" id="kayttaja" name="kayttaja"><br><br>
@@ -18,8 +19,10 @@
     <input type="submit" value="Kirjaudu">
   </form>
 
+  <!-- VIRHEVIESTI -->
   <p id="virheteksti" style="color: red;"></p>
 
+  <!-- JAVASCRIPT -->
   <script>
     function tarkistaKirjautuminen() {
       const kayttaja = document.getElementById('kayttaja').value;
