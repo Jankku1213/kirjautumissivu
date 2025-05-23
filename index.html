@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>kirjautuminen</title>
+  <meta charset="UTF-8">
+  <title>Kirjautuminen</title>
 </head>
 <body>
 
-  <h2>Kirjaudu sisään</h2>
+  <h2>Tervetuloa! Kirjaudu sisään</h2>
 
-  <form method="post" action="tarkista.html">
-    <label for="tunnus">Tunnus:</label><br>
-    <input type="text" id="tunnus" name="tunnus"><br><br>
+  <form onsubmit="return tarkistaKirjautuminen();">
+    <label for="kayttaja">Käyttäjätunnus:</label><br>
+    <input type="text" id="kayttaja" name="kayttaja"><br><br>
 
     <label for="salasana">Salasana:</label><br>
     <input type="password" id="salasana" name="salasana"><br><br>
 
     <input type="submit" value="Kirjaudu">
   </form>
+
+  <p id="virheteksti" style="color: red;"></p>
+
+  <script>
+    function tarkistaKirjautuminen() {
+      const kayttaja = document.getElementById('kayttaja').value;
+      const salasana = document.getElementById('salasana').value;
+
+      if (kayttaja === "pelaaja" && salasana === "1234") {
+        alert("Kirjautuminen onnistui!");
+        return true;
+      } else {
+        document.getElementById('virheteksti').innerText = "Virheellinen käyttäjätunnus tai salasana.";
+        return false;
+      }
+    }
+  </script>
 
 </body>
 </html>
